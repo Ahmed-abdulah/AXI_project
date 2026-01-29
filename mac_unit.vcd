@@ -1,0 +1,61 @@
+$date
+	Thu Jan 29 21:53:09 2026
+$end
+$version
+	QuestaSim Version 2021.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb $end
+
+$scope task reset_dut $end
+$upscope $end
+
+$scope task apply_input $end
+$upscope $end
+
+$scope task wait_cycles $end
+$upscope $end
+
+$scope task check_multiplication $end
+$upscope $end
+
+$scope task print_banner $end
+$upscope $end
+
+$scope task print_config $end
+$upscope $end
+
+$scope task print_summary $end
+$upscope $end
+
+$scope task test_corner_cases $end
+$upscope $end
+
+$scope task test_powers_of_two $end
+$upscope $end
+
+$scope task test_sequential_patterns $end
+$upscope $end
+
+$scope task test_random_vectors $end
+$upscope $end
+
+$scope task test_accumulation $end
+$upscope $end
+
+$scope task test_clear_functionality $end
+$upscope $end
+
+$scope task test_overflow_detection $end
+$upscope $end
+
+$scope task test_activation_function $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+$end

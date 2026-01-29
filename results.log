@@ -1,0 +1,454 @@
+Reading pref.tcl
+
+# 2021.1
+
+# vsim -c -do "run -all; quit" work.tb 
+# Start time: 21:52:59 on Jan 29,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb(fast)
+# run -all
+# 
+# ================================================================================
+#   MAC UNIT VERIFICATION - STARTING
+# ================================================================================
+# 
+# Simulation Time: 0
+# Clock Period: 10 ns
+# Configuration:
+#   DATA_WIDTH:    8 bits
+#   ACCUM_WIDTH:   32 bits
+#   OUTPUT_WIDTH:  16 bits
+#   MAX_INPUT:     255 (0x000000ff)
+#   MAX_PRODUCT:   65025
+# 
+# [35000] DUT Reset Complete
+# 
+# ================================================================================
+#   TEST 1: Corner Cases
+# ================================================================================
+# 
+# Test#  | Operation   | Expected       | Actual         | Result
+# --------------------------------------------------------------------------------
+# Test    1 | 0x00 * 0x00 | Expected: 0x0000 | Actual: 0x0000 | PASS
+# Test    2 | 0x00 * 0xff | Expected: 0x0000 | Actual: 0x0000 | PASS
+# Test    3 | 0xff * 0x00 | Expected: 0x0000 | Actual: 0x0000 | PASS
+# Test    4 | 0x00 * 0xff | Expected: 0x0000 | Actual: 0x0000 | PASS
+# Test    5 | 0xff * 0x00 | Expected: 0x0000 | Actual: 0x0000 | PASS
+# ASSERTION FAILED [215000]: Clear accumulator failed
+# Test    6 | 0x01 * 0x01 | Expected: 0x0001 | Actual: 0x0001 | PASS
+# ASSERTION FAILED [245000]: Clear accumulator failed
+# Test    7 | 0x01 * 0xff | Expected: 0x00ff | Actual: 0x00ff | PASS
+# ASSERTION FAILED [275000]: Clear accumulator failed
+# Test    8 | 0xff * 0x01 | Expected: 0x00ff | Actual: 0x00ff | PASS
+# ASSERTION FAILED [305000]: Clear accumulator failed
+# Test    9 | 0xff * 0xff | Expected: 0xfe01 | Actual: 0xfe01 | PASS
+# ASSERTION FAILED [335000]: Clear accumulator failed
+# Test   10 | 0x80 * 0x80 | Expected: 0x4000 | Actual: 0x4000 | PASS
+# 
+# ================================================================================
+#   TEST 2: Powers of 2 Multiplication
+# ================================================================================
+# 
+# Test#  | Operation   | Expected       | Actual         | Result
+# --------------------------------------------------------------------------------
+# ASSERTION FAILED [365000]: Clear accumulator failed
+# Test   11 | 0x01 * 0x01 | Expected: 0x0001 | Actual: 0x0001 | PASS
+# ASSERTION FAILED [395000]: Clear accumulator failed
+# Test   12 | 0x01 * 0x02 | Expected: 0x0002 | Actual: 0x0002 | PASS
+# ASSERTION FAILED [425000]: Clear accumulator failed
+# Test   13 | 0x01 * 0x04 | Expected: 0x0004 | Actual: 0x0004 | PASS
+# ASSERTION FAILED [455000]: Clear accumulator failed
+# Test   14 | 0x01 * 0x08 | Expected: 0x0008 | Actual: 0x0008 | PASS
+# ASSERTION FAILED [485000]: Clear accumulator failed
+# Test   15 | 0x01 * 0x10 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [515000]: Clear accumulator failed
+# Test   16 | 0x01 * 0x20 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [545000]: Clear accumulator failed
+# Test   17 | 0x01 * 0x40 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [575000]: Clear accumulator failed
+# Test   18 | 0x01 * 0x80 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [605000]: Clear accumulator failed
+# Test   19 | 0x02 * 0x01 | Expected: 0x0002 | Actual: 0x0002 | PASS
+# ASSERTION FAILED [635000]: Clear accumulator failed
+# Test   20 | 0x02 * 0x02 | Expected: 0x0004 | Actual: 0x0004 | PASS
+# ASSERTION FAILED [665000]: Clear accumulator failed
+# Test   21 | 0x02 * 0x04 | Expected: 0x0008 | Actual: 0x0008 | PASS
+# ASSERTION FAILED [695000]: Clear accumulator failed
+# Test   22 | 0x02 * 0x08 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [725000]: Clear accumulator failed
+# Test   23 | 0x02 * 0x10 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [755000]: Clear accumulator failed
+# Test   24 | 0x02 * 0x20 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [785000]: Clear accumulator failed
+# Test   25 | 0x02 * 0x40 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [815000]: Clear accumulator failed
+# Test   26 | 0x02 * 0x80 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [845000]: Clear accumulator failed
+# Test   27 | 0x04 * 0x01 | Expected: 0x0004 | Actual: 0x0004 | PASS
+# ASSERTION FAILED [875000]: Clear accumulator failed
+# Test   28 | 0x04 * 0x02 | Expected: 0x0008 | Actual: 0x0008 | PASS
+# ASSERTION FAILED [905000]: Clear accumulator failed
+# Test   29 | 0x04 * 0x04 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [935000]: Clear accumulator failed
+# Test   30 | 0x04 * 0x08 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [965000]: Clear accumulator failed
+# Test   31 | 0x04 * 0x10 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [995000]: Clear accumulator failed
+# Test   32 | 0x04 * 0x20 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1025000]: Clear accumulator failed
+# Test   33 | 0x04 * 0x40 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [1055000]: Clear accumulator failed
+# Test   34 | 0x04 * 0x80 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [1085000]: Clear accumulator failed
+# Test   35 | 0x08 * 0x01 | Expected: 0x0008 | Actual: 0x0008 | PASS
+# ASSERTION FAILED [1115000]: Clear accumulator failed
+# Test   36 | 0x08 * 0x02 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [1145000]: Clear accumulator failed
+# Test   37 | 0x08 * 0x04 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [1175000]: Clear accumulator failed
+# Test   38 | 0x08 * 0x08 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [1205000]: Clear accumulator failed
+# Test   39 | 0x08 * 0x10 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1235000]: Clear accumulator failed
+# Test   40 | 0x08 * 0x20 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [1265000]: Clear accumulator failed
+# Test   41 | 0x08 * 0x40 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [1295000]: Clear accumulator failed
+# Test   42 | 0x08 * 0x80 | Expected: 0x0400 | Actual: 0x0400 | PASS
+# ASSERTION FAILED [1325000]: Clear accumulator failed
+# Test   43 | 0x10 * 0x01 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [1355000]: Clear accumulator failed
+# Test   44 | 0x10 * 0x02 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [1385000]: Clear accumulator failed
+# Test   45 | 0x10 * 0x04 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [1415000]: Clear accumulator failed
+# Test   46 | 0x10 * 0x08 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1445000]: Clear accumulator failed
+# Test   47 | 0x10 * 0x10 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [1475000]: Clear accumulator failed
+# Test   48 | 0x10 * 0x20 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [1505000]: Clear accumulator failed
+# Test   49 | 0x10 * 0x40 | Expected: 0x0400 | Actual: 0x0400 | PASS
+# ASSERTION FAILED [1535000]: Clear accumulator failed
+# Test   50 | 0x10 * 0x80 | Expected: 0x0800 | Actual: 0x0800 | PASS
+# ASSERTION FAILED [1565000]: Clear accumulator failed
+# Test   51 | 0x20 * 0x01 | Expected: 0x0020 | Actual: 0x0020 | PASS
+# ASSERTION FAILED [1595000]: Clear accumulator failed
+# Test   52 | 0x20 * 0x02 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [1625000]: Clear accumulator failed
+# Test   53 | 0x20 * 0x04 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1655000]: Clear accumulator failed
+# Test   54 | 0x20 * 0x08 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [1685000]: Clear accumulator failed
+# Test   55 | 0x20 * 0x10 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [1715000]: Clear accumulator failed
+# Test   56 | 0x20 * 0x20 | Expected: 0x0400 | Actual: 0x0400 | PASS
+# ASSERTION FAILED [1745000]: Clear accumulator failed
+# Test   57 | 0x20 * 0x40 | Expected: 0x0800 | Actual: 0x0800 | PASS
+# ASSERTION FAILED [1775000]: Clear accumulator failed
+# Test   58 | 0x40 * 0x01 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [1805000]: Clear accumulator failed
+# Test   59 | 0x40 * 0x02 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1835000]: Clear accumulator failed
+# Test   60 | 0x40 * 0x04 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [1865000]: Clear accumulator failed
+# Test   61 | 0x40 * 0x08 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [1895000]: Clear accumulator failed
+# Test   62 | 0x40 * 0x10 | Expected: 0x0400 | Actual: 0x0400 | PASS
+# ASSERTION FAILED [1925000]: Clear accumulator failed
+# Test   63 | 0x40 * 0x20 | Expected: 0x0800 | Actual: 0x0800 | PASS
+# ASSERTION FAILED [1955000]: Clear accumulator failed
+# Test   64 | 0x80 * 0x01 | Expected: 0x0080 | Actual: 0x0080 | PASS
+# ASSERTION FAILED [1985000]: Clear accumulator failed
+# Test   65 | 0x80 * 0x02 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [2015000]: Clear accumulator failed
+# Test   66 | 0x80 * 0x04 | Expected: 0x0200 | Actual: 0x0200 | PASS
+# ASSERTION FAILED [2045000]: Clear accumulator failed
+# Test   67 | 0x80 * 0x08 | Expected: 0x0400 | Actual: 0x0400 | PASS
+# ASSERTION FAILED [2075000]: Clear accumulator failed
+# Test   68 | 0x80 * 0x10 | Expected: 0x0800 | Actual: 0x0800 | PASS
+# 
+# ================================================================================
+#   TEST 3: Sequential Pattern Multiplication
+# ================================================================================
+# 
+# Test#  | Operation   | Expected       | Actual         | Result
+# --------------------------------------------------------------------------------
+# Test   69 | 0x00 * 0x00 | Expected: 0x0000 | Actual: 0x0000 | PASS
+# ASSERTION FAILED [2135000]: Clear accumulator failed
+# Test   70 | 0x01 * 0x01 | Expected: 0x0001 | Actual: 0x0001 | PASS
+# ASSERTION FAILED [2165000]: Clear accumulator failed
+# Test   71 | 0x02 * 0x02 | Expected: 0x0004 | Actual: 0x0004 | PASS
+# ASSERTION FAILED [2195000]: Clear accumulator failed
+# Test   72 | 0x03 * 0x03 | Expected: 0x0009 | Actual: 0x0009 | PASS
+# ASSERTION FAILED [2225000]: Clear accumulator failed
+# Test   73 | 0x04 * 0x04 | Expected: 0x0010 | Actual: 0x0010 | PASS
+# ASSERTION FAILED [2255000]: Clear accumulator failed
+# Test   74 | 0x05 * 0x05 | Expected: 0x0019 | Actual: 0x0019 | PASS
+# ASSERTION FAILED [2285000]: Clear accumulator failed
+# Test   75 | 0x06 * 0x06 | Expected: 0x0024 | Actual: 0x0024 | PASS
+# ASSERTION FAILED [2315000]: Clear accumulator failed
+# Test   76 | 0x07 * 0x07 | Expected: 0x0031 | Actual: 0x0031 | PASS
+# ASSERTION FAILED [2345000]: Clear accumulator failed
+# Test   77 | 0x08 * 0x08 | Expected: 0x0040 | Actual: 0x0040 | PASS
+# ASSERTION FAILED [2375000]: Clear accumulator failed
+# Test   78 | 0x09 * 0x09 | Expected: 0x0051 | Actual: 0x0051 | PASS
+# ASSERTION FAILED [2405000]: Clear accumulator failed
+# Test   79 | 0x0a * 0x0a | Expected: 0x0064 | Actual: 0x0064 | PASS
+# ASSERTION FAILED [2435000]: Clear accumulator failed
+# Test   80 | 0x0b * 0x0b | Expected: 0x0079 | Actual: 0x0079 | PASS
+# ASSERTION FAILED [2465000]: Clear accumulator failed
+# Test   81 | 0x0c * 0x0c | Expected: 0x0090 | Actual: 0x0090 | PASS
+# ASSERTION FAILED [2495000]: Clear accumulator failed
+# Test   82 | 0x0d * 0x0d | Expected: 0x00a9 | Actual: 0x00a9 | PASS
+# ASSERTION FAILED [2525000]: Clear accumulator failed
+# Test   83 | 0x0e * 0x0e | Expected: 0x00c4 | Actual: 0x00c4 | PASS
+# ASSERTION FAILED [2555000]: Clear accumulator failed
+# Test   84 | 0x0f * 0x0f | Expected: 0x00e1 | Actual: 0x00e1 | PASS
+# ASSERTION FAILED [2585000]: Clear accumulator failed
+# Test   85 | 0x10 * 0x10 | Expected: 0x0100 | Actual: 0x0100 | PASS
+# ASSERTION FAILED [2615000]: Clear accumulator failed
+# Test   86 | 0x11 * 0x11 | Expected: 0x0121 | Actual: 0x0121 | PASS
+# ASSERTION FAILED [2645000]: Clear accumulator failed
+# Test   87 | 0x12 * 0x12 | Expected: 0x0144 | Actual: 0x0144 | PASS
+# ASSERTION FAILED [2675000]: Clear accumulator failed
+# Test   88 | 0x13 * 0x13 | Expected: 0x0169 | Actual: 0x0169 | PASS
+# Test   89 | 0x00 * 0xff | Expected: 0x0000 | Actual: 0x0000 | PASS
+# ASSERTION FAILED [2735000]: Clear accumulator failed
+# Test   90 | 0x01 * 0xfe | Expected: 0x00fe | Actual: 0x00fe | PASS
+# ASSERTION FAILED [2765000]: Clear accumulator failed
+# Test   91 | 0x02 * 0xfd | Expected: 0x01fa | Actual: 0x01fa | PASS
+# ASSERTION FAILED [2795000]: Clear accumulator failed
+# Test   92 | 0x03 * 0xfc | Expected: 0x02f4 | Actual: 0x02f4 | PASS
+# ASSERTION FAILED [2825000]: Clear accumulator failed
+# Test   93 | 0x04 * 0xfb | Expected: 0x03ec | Actual: 0x03ec | PASS
+# ASSERTION FAILED [2855000]: Clear accumulator failed
+# Test   94 | 0x05 * 0xfa | Expected: 0x04e2 | Actual: 0x04e2 | PASS
+# ASSERTION FAILED [2885000]: Clear accumulator failed
+# Test   95 | 0x06 * 0xf9 | Expected: 0x05d6 | Actual: 0x05d6 | PASS
+# ASSERTION FAILED [2915000]: Clear accumulator failed
+# Test   96 | 0x07 * 0xf8 | Expected: 0x06c8 | Actual: 0x06c8 | PASS
+# ASSERTION FAILED [2945000]: Clear accumulator failed
+# Test   97 | 0x08 * 0xf7 | Expected: 0x07b8 | Actual: 0x07b8 | PASS
+# ASSERTION FAILED [2975000]: Clear accumulator failed
+# Test   98 | 0x09 * 0xf6 | Expected: 0x08a6 | Actual: 0x08a6 | PASS
+# ASSERTION FAILED [3005000]: Clear accumulator failed
+# Test   99 | 0x0a * 0xf5 | Expected: 0x0992 | Actual: 0x0992 | PASS
+# ASSERTION FAILED [3035000]: Clear accumulator failed
+# Test  100 | 0x0b * 0xf4 | Expected: 0x0a7c | Actual: 0x0a7c | PASS
+# ASSERTION FAILED [3065000]: Clear accumulator failed
+# Test  101 | 0x0c * 0xf3 | Expected: 0x0b64 | Actual: 0x0b64 | PASS
+# ASSERTION FAILED [3095000]: Clear accumulator failed
+# Test  102 | 0x0d * 0xf2 | Expected: 0x0c4a | Actual: 0x0c4a | PASS
+# ASSERTION FAILED [3125000]: Clear accumulator failed
+# Test  103 | 0x0e * 0xf1 | Expected: 0x0d2e | Actual: 0x0d2e | PASS
+# ASSERTION FAILED [3155000]: Clear accumulator failed
+# Test  104 | 0x0f * 0xf0 | Expected: 0x0e10 | Actual: 0x0e10 | PASS
+# ASSERTION FAILED [3185000]: Clear accumulator failed
+# Test  105 | 0x10 * 0xef | Expected: 0x0ef0 | Actual: 0x0ef0 | PASS
+# ASSERTION FAILED [3215000]: Clear accumulator failed
+# Test  106 | 0x11 * 0xee | Expected: 0x0fce | Actual: 0x0fce | PASS
+# ASSERTION FAILED [3245000]: Clear accumulator failed
+# Test  107 | 0x12 * 0xed | Expected: 0x10aa | Actual: 0x10aa | PASS
+# ASSERTION FAILED [3275000]: Clear accumulator failed
+# Test  108 | 0x13 * 0xec | Expected: 0x1184 | Actual: 0x1184 | PASS
+# 
+# ================================================================================
+#   TEST 4: Random Vector Multiplication
+# ================================================================================
+# 
+# Test#  | Operation   | Expected       | Actual         | Result
+# --------------------------------------------------------------------------------
+# ASSERTION FAILED [3305000]: Clear accumulator failed
+# Test  109 | 0x24 * 0x81 | Expected: 0x1224 | Actual: 0x1224 | PASS
+# ASSERTION FAILED [3335000]: Clear accumulator failed
+# Test  110 | 0x09 * 0x63 | Expected: 0x037b | Actual: 0x037b | PASS
+# ASSERTION FAILED [3365000]: Clear accumulator failed
+# Test  111 | 0x0d * 0x8d | Expected: 0x0729 | Actual: 0x0729 | PASS
+# ASSERTION FAILED [3395000]: Clear accumulator failed
+# Test  112 | 0x65 * 0x12 | Expected: 0x071a | Actual: 0x071a | PASS
+# ASSERTION FAILED [3425000]: Clear accumulator failed
+# Test  113 | 0x01 * 0x0d | Expected: 0x000d | Actual: 0x000d | PASS
+# ASSERTION FAILED [3455000]: Clear accumulator failed
+# Test  114 | 0x76 * 0x3d | Expected: 0x1c1e | Actual: 0x1c1e | PASS
+# ASSERTION FAILED [3485000]: Clear accumulator failed
+# Test  115 | 0xed * 0x8c | Expected: 0x819c | Actual: 0x819c | PASS
+# ASSERTION FAILED [3515000]: Clear accumulator failed
+# Test  116 | 0xf9 * 0xc6 | Expected: 0xc096 | Actual: 0xc096 | PASS
+# ASSERTION FAILED [3545000]: Clear accumulator failed
+# Test  117 | 0xc5 * 0xaa | Expected: 0x82d2 | Actual: 0x82d2 | PASS
+# ASSERTION FAILED [3575000]: Clear accumulator failed
+# Test  118 | 0xe5 * 0x77 | Expected: 0x6a73 | Actual: 0x6a73 | PASS
+# ASSERTION FAILED [3605000]: Clear accumulator failed
+# Test  119 | 0x12 * 0x8f | Expected: 0x0a0e | Actual: 0x0a0e | PASS
+# ASSERTION FAILED [3635000]: Clear accumulator failed
+# Test  120 | 0xf2 * 0xce | Expected: 0xc2bc | Actual: 0xc2bc | PASS
+# ASSERTION FAILED [3665000]: Clear accumulator failed
+# Test  121 | 0xe8 * 0xc5 | Expected: 0xb288 | Actual: 0xb288 | PASS
+# ASSERTION FAILED [3695000]: Clear accumulator failed
+# Test  122 | 0x5c * 0xbd | Expected: 0x43ec | Actual: 0x43ec | PASS
+# ASSERTION FAILED [3725000]: Clear accumulator failed
+# Test  123 | 0x2d * 0x65 | Expected: 0x11c1 | Actual: 0x11c1 | PASS
+# ASSERTION FAILED [3755000]: Clear accumulator failed
+# Test  124 | 0x63 * 0x0a | Expected: 0x03de | Actual: 0x03de | PASS
+# ASSERTION FAILED [3785000]: Clear accumulator failed
+# Test  125 | 0x80 * 0x20 | Expected: 0x1000 | Actual: 0x1000 | PASS
+# ASSERTION FAILED [3815000]: Clear accumulator failed
+# Test  126 | 0xaa * 0x9d | Expected: 0x6842 | Actual: 0x6842 | PASS
+# ASSERTION FAILED [3845000]: Clear accumulator failed
+# Test  127 | 0x96 * 0x13 | Expected: 0x0b22 | Actual: 0x0b22 | PASS
+# ASSERTION FAILED [3875000]: Clear accumulator failed
+# Test  128 | 0x0d * 0x53 | Expected: 0x0437 | Actual: 0x0437 | PASS
+# ASSERTION FAILED [3905000]: Clear accumulator failed
+# Test  129 | 0x6b * 0xd5 | Expected: 0x5907 | Actual: 0x5907 | PASS
+# ASSERTION FAILED [3935000]: Clear accumulator failed
+# Test  130 | 0x02 * 0xae | Expected: 0x015c | Actual: 0x015c | PASS
+# ASSERTION FAILED [3965000]: Clear accumulator failed
+# Test  131 | 0x1d * 0xcf | Expected: 0x1773 | Actual: 0x1773 | PASS
+# ASSERTION FAILED [3995000]: Clear accumulator failed
+# Test  132 | 0x23 * 0x0a | Expected: 0x015e | Actual: 0x015e | PASS
+# ASSERTION FAILED [4025000]: Clear accumulator failed
+# Test  133 | 0xca * 0x3c | Expected: 0x2f58 | Actual: 0x2f58 | PASS
+# ASSERTION FAILED [4055000]: Clear accumulator failed
+# Test  134 | 0xf2 * 0x8a | Expected: 0x8274 | Actual: 0x8274 | PASS
+# ASSERTION FAILED [4085000]: Clear accumulator failed
+# Test  135 | 0x41 * 0xd8 | Expected: 0x36d8 | Actual: 0x36d8 | PASS
+# ASSERTION FAILED [4115000]: Clear accumulator failed
+# Test  136 | 0x78 * 0x89 | Expected: 0x4038 | Actual: 0x4038 | PASS
+# ASSERTION FAILED [4145000]: Clear accumulator failed
+# Test  137 | 0xeb * 0xb6 | Expected: 0xa712 | Actual: 0xa712 | PASS
+# ASSERTION FAILED [4175000]: Clear accumulator failed
+# Test  138 | 0xc6 * 0xae | Expected: 0x8694 | Actual: 0x8694 | PASS
+# ASSERTION FAILED [4205000]: Clear accumulator failed
+# Test  139 | 0xbc * 0x2a | Expected: 0x1ed8 | Actual: 0x1ed8 | PASS
+# ASSERTION FAILED [4235000]: Clear accumulator failed
+# Test  140 | 0x0b * 0x71 | Expected: 0x04db | Actual: 0x04db | PASS
+# ASSERTION FAILED [4265000]: Clear accumulator failed
+# Test  141 | 0x85 * 0x4f | Expected: 0x290b | Actual: 0x290b | PASS
+# ASSERTION FAILED [4295000]: Clear accumulator failed
+# Test  142 | 0x3b * 0x3a | Expected: 0x0d5e | Actual: 0x0d5e | PASS
+# ASSERTION FAILED [4325000]: Clear accumulator failed
+# Test  143 | 0x7e * 0x15 | Expected: 0x0a56 | Actual: 0x0a56 | PASS
+# ASSERTION FAILED [4355000]: Clear accumulator failed
+# Test  144 | 0xf1 * 0xd9 | Expected: 0xcc49 | Actual: 0xcc49 | PASS
+# ASSERTION FAILED [4385000]: Clear accumulator failed
+# Test  145 | 0x62 * 0x4c | Expected: 0x1d18 | Actual: 0x1d18 | PASS
+# ASSERTION FAILED [4415000]: Clear accumulator failed
+# Test  146 | 0x9f * 0x8f | Expected: 0x58d1 | Actual: 0x58d1 | PASS
+# ASSERTION FAILED [4445000]: Clear accumulator failed
+# Test  147 | 0xf8 * 0xb7 | Expected: 0xb148 | Actual: 0xb148 | PASS
+# ASSERTION FAILED [4475000]: Clear accumulator failed
+# Test  148 | 0x9f * 0x5c | Expected: 0x3924 | Actual: 0x3924 | PASS
+# ASSERTION FAILED [4505000]: Clear accumulator failed
+# Test  149 | 0x5b * 0x89 | Expected: 0x30b3 | Actual: 0x30b3 | PASS
+# ASSERTION FAILED [4535000]: Clear accumulator failed
+# Test  150 | 0x49 * 0xd0 | Expected: 0x3b50 | Actual: 0x3b50 | PASS
+# ASSERTION FAILED [4565000]: Clear accumulator failed
+# Test  151 | 0xd7 * 0x51 | Expected: 0x4407 | Actual: 0x4407 | PASS
+# ASSERTION FAILED [4595000]: Clear accumulator failed
+# Test  152 | 0x96 * 0x0c | Expected: 0x0708 | Actual: 0x0708 | PASS
+# ASSERTION FAILED [4625000]: Clear accumulator failed
+# Test  153 | 0xc2 * 0xc8 | Expected: 0x9790 | Actual: 0x9790 | PASS
+# ASSERTION FAILED [4655000]: Clear accumulator failed
+# Test  154 | 0x77 * 0x3d | Expected: 0x1c5b | Actual: 0x1c5b | PASS
+# ASSERTION FAILED [4685000]: Clear accumulator failed
+# Test  155 | 0x12 * 0x7e | Expected: 0x08dc | Actual: 0x08dc | PASS
+# ASSERTION FAILED [4715000]: Clear accumulator failed
+# Test  156 | 0x6d * 0x39 | Expected: 0x1845 | Actual: 0x1845 | PASS
+# ASSERTION FAILED [4745000]: Clear accumulator failed
+# Test  157 | 0x1f * 0xd3 | Expected: 0x198d | Actual: 0x198d | PASS
+# ASSERTION FAILED [4775000]: Clear accumulator failed
+# Test  158 | 0x85 * 0x78 | Expected: 0x3e58 | Actual: 0x3e58 | PASS
+# 
+# ================================================================================
+#   TEST 5: MAC Accumulation
+# ================================================================================
+# 
+# Running 10 MAC operations...
+#   Op 1: 28 * 10 = 280, Expected Acc = 280
+#   Op 2: 64 * 43 = 2752, Expected Acc = 3032
+#   Op 3: 25 * 7 = 175, Expected Acc = 3207
+#   Op 4: 15 * 29 = 435, Expected Acc = 3642
+#   Op 5: 59 * 39 = 2301, Expected Acc = 5943
+#   Expected Acc[15:0]: 0x2fa4
+#   Actual Acc[15:0]:   0x2fa4
+#   Result: PASS
+# 
+# 
+# ================================================================================
+#   TEST 6: Clear Accumulator Functionality
+# ================================================================================
+# 
+# Accumulator before clear: 0x0578
+# Accumulator after clear:  0x0000
+# Overflow flag:            0
+# Clear test: PASS
+# 
+# 
+# ================================================================================
+#   TEST 7: Overflow Detection
+# ================================================================================
+# 
+# Filling accumulator to trigger overflow...
+#   Iteration 100: Accumulator = 0x00643665
+#   Iteration 200: Accumulator = 0x00c76ec9
+#   Iteration 300: Accumulator = 0x012aa72d
+#   Iteration 400: Accumulator = 0x018ddf91
+#   Iteration 500: Accumulator = 0x01f117f5
+#   Iteration 600: Accumulator = 0x02545059
+#   Iteration 700: Accumulator = 0x02b788bd
+#   Iteration 800: Accumulator = 0x031ac121
+#   Iteration 900: Accumulator = 0x037df985
+# Overflow test: No overflow (OK for large accumulator)
+# 
+# 
+# ================================================================================
+#   TEST 8: Sigmoid Activation Function
+# ================================================================================
+# 
+# Description          | Product | MAC Output     | Activated
+# --------------------------------------------------------------------------------
+# Zero input           | 0x00  | 0x0000 | 0x8000
+# ASSERTION FAILED [35215000]: Clear accumulator failed
+# Small product        | 0x0064  | 0x0064 | 0x800c
+# ASSERTION FAILED [35245000]: Clear accumulator failed
+# Medium product       | 0x09c4  | 0x09c4 | 0x8138
+# ASSERTION FAILED [35275000]: Clear accumulator failed
+# Maximum product      | 0xfe01  | 0xfe01 | 0x7fc0
+# 
+# 
+# ================================================================================
+#   TEST SUMMARY - 8-bit MAC UNIT
+# ================================================================================
+#   Total Tests:  161
+#   Passed:       161
+#   Failed:       0
+#   Pass Rate:    100.00%
+# ================================================================================
+# 
+# 
+# ================================================================================
+#   ALL TESTS PASSED!
+# ================================================================================
+# 
+# SUCCESS: 8-bit MAC Unit verification completed successfully
+# 
+# ** Note: $finish    : mac_tb.v(537)
+#    Time: 35325 ns  Iteration: 1  Instance: /tb
+# End time: 21:53:09 on Jan 29,2026, Elapsed time: 0:00:10
+# Errors: 0, Warnings: 0
